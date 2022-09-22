@@ -32,6 +32,18 @@
 
     <div class="container body-content">
 
+        @if (ViewBag.ShowBackBar != null && ViewBag.ShowBackBar)
+        {
+            <div class="backbar">
+                <div class="container">
+                    @Html.ActionLink("Return to List", "Index", null, new { @class = "btn btn-default" })
+                    
+                </div>
+            </div>
+        }
+        else
+        { }
+
         @RenderBody()
 
         <hr />
@@ -45,3 +57,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
